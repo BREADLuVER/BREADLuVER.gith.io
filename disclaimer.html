@@ -60,7 +60,7 @@
                 <p class="caption">I must mention that a lot of the information I'll be interpreting and providing in this guide is documented on the Chinese discussion site TieBa and in video form on bilibili. However, these sources are like folk tales, passed from one player to another and refined over time. As such, while I'll do my absolute best to cite and communicate with the creators of the strategies I present, it's possible that I may make mistakes or unintentionally leave out important details. Correct me if you have the insight. 
                 </p> 
                 <p class="caption">
-                I should also note that I should be viewed as a passionate reporter, rather than an expert or authority on the game. My goal is not to tell you “the best way” to play a video game or dive into the politics of which community plays the game better. Instead, I aim to provide a platform for sharing and discussing the unique strategies, insights, and experiences of RimWorld players from around the world.
+                I should also note that I should be viewed as a passionate reporter, rather than an expert or authority on the game. My goal is not to tell anyone “the best way” to play a video game or dive into the politics of which community plays the game better. Instead, I want to provide a platform for sharing and discussing the unique/fun strategies, insights, and experiences of RimWorld players from around the world. So, lets just have fun.
                 </p>
             </div>
             <div class="dis-pic-container col-lg-6 col-md-6 col-sm-12" data-aos="zoom-in">
@@ -104,12 +104,54 @@
         });
       });
 
-      let likeCount = 0;
-      const likeCountElement = document.getElementById('like-count');
+     const API_KEY = '$2b$10$8p1STBA8I6MWqQlbPdgmbegqjGY0kuSV3Z4RL.x0LfWcuHvvVxwUW';
+     const BIN_URL = 'https://api.jsonbin.io/v3/b/6462e5a3b89b1e22999e8041';
 
+       // Fetch the current likes count and display it
+      fetch(BIN_URL, {
+        method: 'GET',
+        headers: {
+          'X-Master-Key': API_KEY
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (isNaN(data.record.likes)) {
+          console.error('Invalid likes count:', data.record.likes);
+        } else {
+          document.getElementById('like-count').textContent = data.record.likes;
+        }
+      })
+      .catch(error => console.error('Error:', error));
+
+      // Function to increment likes
       function incrementLikes() {
-        likeCount++;
-        likeCountElement.textContent = likeCount;
+        // Check if the user has already liked
+        if(localStorage.getItem('hasLiked')) {
+          alert('You have already liked this post.');
+          return;
+        }
+
+        const likeCountElement = document.getElementById('like-count');
+        let likeCount = parseInt(likeCountElement.textContent) + 1;
+
+        // Update the likes count in JSONbin.io
+        fetch(BIN_URL, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': API_KEY
+          },
+          body: JSON.stringify({ likes: likeCount })
+        })
+        .then(response => response.json())
+        .then(data => {
+          // Update the displayed likes count
+          likeCountElement.textContent = likeCount;
+          // Set the flag in local storage
+          localStorage.setItem('hasLiked', 'true');
+        })
+        .catch(error => console.error('Error:', error));
       }
 
       AOS.init();

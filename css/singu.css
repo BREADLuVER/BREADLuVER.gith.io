@@ -122,22 +122,42 @@
   font-family: logoType;
 }
 
-.image-container{
-  overflow: hidden;
+.image-container {
+    width: 70%;
+    height: 0;
+    padding-bottom: 70%; /* 16:9 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
 }
+
+.image-container2 {
+    width: 70%;
+    height: 0;
+    padding-bottom: 70%; /* 16:9 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+.img-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This makes the image maintain its aspect ratio while filling the container */
+}
+
+
 
 .hero-img{
-  width: 70%;
+  width: 80%;
 }
 
-body {
-        text-align: center;
-      }
       
 p {
   margin: 0 auto;
   font-family: iran;
-  max-width: 800px;
+  max-width: 1100px;
   font-size: 18px;
   line-height: 1.5;
   padding-bottom: 20px;
@@ -147,7 +167,41 @@ p {
   max-width: 70%;
 }
 
+.thumb {
+    width: 750px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumb2 {
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thumb3 {
+    width: 65%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wide-container {
+    width: 100%;  /* Set this to the width you want. */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.big-letter {
+    font-size: 23pt; /* Makes the H bigger. Adjust the value as necessary. */
+    font-weight: bold; /* Makes the H bold */
+}
+
+
 .caption {
+  text-align: center !important;
   font-size: 14px;
   font-style: italic;
   margin-bottom: 20px;
@@ -229,6 +283,14 @@ body {
     justify-content: center;
   }
 
+  .image-container2 {
+    width: 70%;
+    height: 0;
+    padding-bottom: 70%; /* 16:9 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -275,6 +337,7 @@ body {
   }
 
   .caption {
+    text-align: center;
     font-size : 9pt;
     text-align: center;
     margin-top: 0px;
