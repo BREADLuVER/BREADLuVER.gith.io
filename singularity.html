@@ -35,6 +35,9 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="cheese.html">Cheeses</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="disclaimer.html">Disclaimer</a>
                     </li>
                     <li class="nav-item">
@@ -69,7 +72,7 @@
               positioned at is defined by its creator DragonRain as the singularity point, a strange (奇) point where &#34;one
               can shoot at, but the other can&#39;t shoot back&#34;. The existence of the singularity point is a god
               send for killbox players - allowing&nbsp;&nbsp;players to cheat the enemy AI by granting pawns 2-3 tiles
-              of invisibility, or even shoot though walls.
+              of invisibility, or even the ability to shoot though walls.
         </p>
         <div class="text-center my-4">
             <img src="images/sing1.png" class="img-fluid rounded thumb" alt="Image description">
@@ -129,11 +132,18 @@
         </p>
         <img src="images/sing9.jpg" class="img-fluid rounded thumb3" alt="Image description">
         <p class="caption my-3 text-center">Modified singularity killbox by Brotha Onion</p>
-        <p> Killboxes like these rely heavily on enemy pawns being unable to see player pawns when they enter. The singularity point ensures that enemies won't take cover or shoot back in the corridor leading up to the killbox. By the time the enemies gain vision, they are already exposed in the open, and due to the peculiar programming, they have to find cover before they can retaliate. Players can fully exploit this enemy behavior by placing melee pawns or pets at the cover location, converting it into a fire room, or employing both strategies. It's important to note that mechanoids will not seek cover and can sometimes disrupt the collision system. In such cases, EMP devices, high DPS (damage per second), and animal meat shields become necessary.
+        <p> Killboxes like these hinge significantly on the premise that enemy pawns won't be able to detect the player's pawns as they enter. This ensures that the enemies won't seek cover or return fire while they're traversing the corridor leading to the killbox. By the time the enemies do gain vision, they are already exposed, and due to unique programming, will prioritize seeking cover before retaliating. This characteristic can be leveraged by players who can strategically position melee pawns or pets at the cover points, transforming them into fire rooms, or utilizing a combination of these tactics. It's crucial to remember, however, that mechanoids don't adhere to the cover-seeking behavior and may occasionally interfere with the collision system. In such scenarios, the use of EMP devices, high damage-per-second (DPS) outputs, and animal shields becomes indispensable.
         </p>
         <img src="images/sing10.jpg" class="img-fluid rounded thumb3" alt="Image description">
-        <p class="caption my-3 text-center">Flaming Hot Lagenaria KillBox by Metro Nine <br/> Note that the enemies are running into the melee pawns and bears</p>
+        <p class="caption my-3 text-center">Flaming Hot Lagenaria KillBox by Metro Nine <br/> Note that the enemies are running into the melee pawns and bears after leaving the singularity point</p>
     </div>
+
+<!-- begin wwww.htmlcommentbox.com -->
+ <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Form</a> is loading comments...</div>
+ <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24uA9Cs9RyEt%2Fw1MWB0FSvJ1"+"&opts=16798&num=10&ts=1684364415617");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end www.htmlcommentbox.com -->
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -214,6 +224,55 @@
             })
             .catch(error => console.error('Error:', error));
           }
+
+          $(document).ready(function() {
+            // Replace with your JSONBin.io API key and bin id
+            var apiKey = 'your-api-key';
+            var binId = 'your-bin-id';
+
+            // Load comments from JSONBin.io
+            function loadComments() {
+              $.ajax({
+                url: 'https://api.jsonbin.io/b/' + binId,
+                method: 'GET',
+                headers: {
+                  'secret-key': apiKey
+                },
+                success: function(data) {
+                  $('#comments-section').html('');
+                  for (var i = 0; i < data.length; i++) {
+                    var comment = data[i];
+                    $('#comments-section').append('<p><strong>' + comment.name + ':</strong> ' + comment.comment + '</p>');
+                  }
+                }
+              });
+            }
+
+            // Submit comment to JSONBin.io
+            $('#comment-form').submit(function(e) {
+              e.preventDefault();
+              var name = $('#name').val();
+              var comment = $('#comment').val();
+              $.ajax({
+                url: 'https://api.jsonbin.io/b/' + binId,
+                method: 'POST',
+                headers: {
+                  'secret-key': apiKey,
+                  'Content-Type': 'application/json',
+                  'versioning': 'false'
+                },
+                data: JSON.stringify([{name: name, comment: comment}]),
+                success: function(data) {
+                  $('#name').val('');
+                  $('#comment').val('');
+                  loadComments();
+                }
+              });
+            });
+
+            // Initially load comments
+            loadComments();
+          });
 
         AOS.init();
     </script>

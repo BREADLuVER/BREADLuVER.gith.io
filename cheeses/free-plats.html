@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/singu.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src=".js"></script>
+
+    <style>
+        .psv-navbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style = "background: #ddd9d9;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container col-md-12">
+            <a class="navbar-brand text-center" href="#">
+                <h1 class="mb-0 title">Human Wifi</h1>
+                <h6 class="mb-1 title2 d-flex justify-content-center">Resting Vegetable</h6>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggler-state="O">
+                <span class="navbar-toggler-icon">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cheese.html">Cheeses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../disclaimer.html">Disclaimer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link like-button" onclick="incrementLikes()">Like</a>
+                        <span id="like-count" class="like-count">0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-0">
+      <div class="row justify-content-center">
+        <div class="hero-container col-lg-6 col-md-6 col-sm-12" data-aos="zoom-in">
+          <div class="hero-card">
+              <img id="hopping-image" src="../images/wifi8.png" class="hero-img rounded" alt="Image description">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-3">
+        <p>
+            <span class="big-letter">I</span>n RimWorld, the psychic harmonizer is a highly useful implant. It operates by influencing the mood of surrounding pawns based on the mood of the pawn equipped with the harmonizer. Depending on the harmonizer pawn's mood, it can either elevate or reduce the mood of other pawns in its vicinity. Furthermore, the mood impact that a pawn experiences or projects is substantially influenced by elements such as their clothing, transplants, genes, and innate traits that relates to psychic sensitivity (the pawn in the picture above has the psy hyper sensitive trait, so the mood buff it receives is around +30 to +50).
+        </p>
+        <p>
+           Effectively harnessing the psychic harmonizer can be literally game changing. Despite its potential, its double-edged nature means it's not often employed. Now, what if I told you there are several simple ways to always receive the mood buff of a harmonizer and not the debuff?
+        </p>
+        <p>
+            Here's an important detail to consider: a pawn's mood will ceases to change if its consciousness falls below 30 percent, and the pawn will die if this drops to zero. Considering this, you may already start to guess our upcoming strategy. That's right, our goal is to create pawns that are, metaphorically speaking, "happy vegetables" (mood 100%, max consciousness 30%).
+        </p>
+
+        <div class="text-center my-4">
+            <img src="../images/vegetable.png" class="img-fluid rounded thumb" alt="Image description">
+        </div>
+
+        <p>
+            <span style="font-weight: bold; font-size: 23px;">Some essentials</span>: (it looks complicated, but it truly isn't)</br>
+        </p>
+        <div class="text-center my-4">
+            <img src="../images/wifi1.png" class="img-fluid rounded thumb" alt="Image description">
+        </div>
+        <p class="col-lg-6 col-md-6 col-sm-12">
+            <strong>N</strong>otable ways to increase mood: </br>
+            &nbsp;&nbsp;1. Joy wire +30</br>
+            &nbsp;&nbsp;2. Joint +12 </br>
+            &nbsp;&nbsp;3. Flake +35 </br>
+            &nbsp;&nbsp;4. Being naked +20 </br>
+            &nbsp;&nbsp;5. Good meals </br>
+            &nbsp;&nbsp;6. Good bed </br>
+            &nbsp;&nbsp;7. Optimist (gene, trait) </br>
+            &nbsp;&nbsp;8. Being a slave (yes)</br>
+        </p>
+        <p class="col-lg-6 col-md-6 col-sm-12">
+            <strong>N</strong>otable ways to reduce a pawn’s consciousness：</br>
+            (See wiki here https://rimworldwiki.com/wiki/Consciousness) </br>
+            &nbsp;&nbsp;1. Insert joy wire −20% </br>
+            &nbsp;&nbsp;2. Auto Bong -30%</br>
+            &nbsp;&nbsp;3. Psychic bond distance: −25%</br>
+            &nbsp;&nbsp;4. Circadian half-cycler: −15%</br>
+            &nbsp;&nbsp;5. Psychic Lance burn scar</br>
+            &nbsp;&nbsp;6. The scar on the brain</br>
+            &nbsp;&nbsp;7. Removing lung -5%</br>
+            &nbsp;&nbsp;8. Drug withdrawal</br>
+            &nbsp;&nbsp;9. DeathRest: limits consciousness to 10% max</br>
+        </p>
+        <div class="text-center my-4">
+            <img src="../images/wifi3.png" class="img-fluid rounded thumb" alt="Image description">
+        </div>
+        <p class="col-lg-6 col-md-6 col-sm-12">
+            A scar on brain + joy wire = usually max 50% consciousness </br>
+            A scar on brain + joy wire + removed lung = usually max 45% consciousness </br>
+            A scar on brain + joy wire + removed lung + circadian= usually max 30% consciousness </br>
+            A scar on brain + joy wire + removed lung + stoned on smoke leaf=  usually max 25% consciousness </br>
+            Death rest = max 10% consciousness
+
+        <p>
+        <p>
+            <span style="font-weight: bold; font-size: 23px;">Midgame strategy (easy): </span>
+            The auto bong (Joywire + brain scar + auto bong)
+        </p>
+        <p>
+            A big reason why I always opt into high life is how easy it is to create a vegetable with my love, the auto bong. It essentially does 2 things, it provides a +13 mood buff to a pawn at the cost of 30% consciousness, making it useful in our happy vegetable farm. 
+            Moreover, placing an autobong in a medical room can further increase the likelihood of a doctor failing a brain surgery, leading to the generation of brain scars more easily.
+        </p>
+        <p>
+            To fail a surgery, let the doctor be high or disabled and let him perform brain surgery on a pawn in a bad environment. Note, the joy wire will be gone if the surgery failed. 
+            Afterward, successfully inserting a joy wire, leaving the auto bong open, and removing a lung will normally result in our first vegetable. 
+            What’s even better with this strategy is that you can turn the auto bong off to wake the vegetable in the future if you gather better clothing. Just remember to anesthetize them before turning the bong on. 
+        </p>
+        <div class="text-center my-4">
+            <img src="../images/wifi3.png" class="img-fluid rounded thumb" alt="Image description">
+            <p class="caption my-3">Move Rat to a autobong room for it to truly transcend</p>
+        </div>
+        <p>
+
+        </p>
+        <p>
+            <span style="font-weight: bold; font-size: 23px;">Midgame strategy (medium): </span>
+            No auto bong (Joywire + brain scar + circadian + lung removal)
+        </p>
+        <p>
+            Similar to above, just change the auto-bong part to inserting a circadian half-cycler and removing a lung. Try other methods like drug withdrawl if that doesn't work.
+        </p>
+        <p> The steps in simple terms: </br>
+            1. Select a pawn with good traits </br>
+            2. Equip it with psychic clothing and weapons </br>
+            3. Make it very happy </br>
+            4. Find a high or bad doctor </br>
+            5. Create a small “clinic” that’s dark and dirty  </br>
+            6. Let the doctor fail a brain surgery on the pawn </br>
+            7. Lower the pawn’s consciousness further </br>
+            8. Insert harmonizer </br>
+        </p>
+        <p>
+
+        </p>
+        <p>
+            <span style="font-weight: bold; font-size: 23px;">Late-game strategy (Extremely easy): </span>
+             Death rest gene
+        </p>
+        <p>
+           If you read carefully, you would realize that Deathrest easily reduces a person's consciousness to below 10%, making it an ideal way to create our wifis.
+           Preferably, you can try starting with just the Death Rest gene and sacrifice some power in the early game to extract it for free. Acquiring this gene through normal playthrough is close to impossible. With the gene inserted, just raise the mood of the pawn, insert the harmonizer, and let it rest for eternity.
+        </p>
+        <div class="text-center my-4">
+            <img src="../images/wifi.png" class="img-fluid rounded thumb" alt="Image description">
+            <p class="caption my-3">Catching some Zs</p>
+        </div>
+        <div class="text-center my-4">
+            <img src="../images/wifi7.png" class="img-fluid rounded thumb" alt="Image description">
+            <p class="caption my-3">4 death rest wifis covering the entire base with mood buffs</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggler = document.querySelector('.navbar-toggler');
+
+            toggler.addEventListener('click', function() {
+              var togglerState = this.getAttribute('data-toggler-state');
+              
+              if (togglerState === 'O') {
+                this.setAttribute('data-toggler-state', 'X');
+              } else {
+                this.setAttribute('data-toggler-state', 'O');
+              }
+            });
+        });
+
+          // Your JSONbin.io API key and bin URL
+          const API_KEY = '$2b$10$8p1STBA8I6MWqQlbPdgmbegqjGY0kuSV3Z4RL.x0LfWcuHvvVxwUW';
+          const BIN_URL = 'https://api.jsonbin.io/v3/b/6462e5a3b89b1e22999e8041';
+
+           // Fetch the current likes count and display it
+          fetch(BIN_URL, {
+            method: 'GET',
+            headers: {
+              'X-Master-Key': API_KEY
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (isNaN(data.record.likes)) {
+              console.error('Invalid likes count:', data.record.likes);
+            } else {
+              document.getElementById('like-count').textContent = data.record.likes;
+            }
+          })
+          .catch(error => console.error('Error:', error));
+
+          // Function to increment likes
+          function incrementLikes() {
+            // Check if the user has already liked
+            if(localStorage.getItem('hasLiked')) {
+              alert('You have already liked this post.');
+              return;
+            }
+
+            const likeCountElement = document.getElementById('like-count');
+            let likeCount = parseInt(likeCountElement.textContent) + 1;
+
+            // Update the likes count in JSONbin.io
+            fetch(BIN_URL, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': API_KEY
+              },
+              body: JSON.stringify({ likes: likeCount })
+            })
+            .then(response => response.json())
+            .then(data => {
+              // Update the displayed likes count
+              likeCountElement.textContent = likeCount;
+              // Set the flag in local storage
+              localStorage.setItem('hasLiked', 'true');
+            })
+            .catch(error => console.error('Error:', error));
+          }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/singu.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src=".js"></script>
+
+    <style>
+        .psv-navbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style = "background: #ddd9d9;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container col-md-12">
+            <a class="navbar-brand text-center" href="#">
+                <h1 class="mb-0 title">Overweight Droppods</h1>
+                <h6 class="mb-1 title2 d-flex justify-content-center">Anesthesia and Deathrest</h6>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-toggler-state="O">
+                <span class="navbar-toggler-icon">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cheese.html">Cheeses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../disclaimer.html">Disclaimer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link like-button" onclick="incrementLikes()">Like</a>
+                        <span id="like-count" class="like-count">0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-0">
+      <div class="row justify-content-center">
+        <div class="hero-container col-lg-6 col-md-6 col-sm-12" data-aos="zoom-in">
+          <div class="hero-card">
+              <img id="hopping-image" src="../images/overw8.png" class="hero-img rounded" alt="Image description">
+          </div>
+          <p class="caption my-3">Droppod containing a pawn weighting 448kg<br/></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-2">
+        <p>
+            <span class="big-letter">F</span>irst, let's consider a simple trick that has opened up numerous strategic possibilities. By assigning a group of mechanoids and a single pawn to a caravan, only the pawn will be responsible for carrying items due to Tynan's wonky code. This means that we can have one pawn carry an enormous amount of items without much limitation to its movements (it can walk around and travel). Now, what if we could amplify its mobility even further by utilizing drop pods?
+        </p>
+        <img src="../images/overw1.png" class="img-fluid rounded thumb" alt="Image description">
+        <img src="../images/overw2.png" class="img-fluid rounded thumb" alt="Image description">
+        <p class="caption my-2">A caravan with 13 mechanoids, 1 pawn, and 60 toxic waste<br/></p>
+        <img src="../images/overw3.png" class="img-fluid rounded thumb" alt="Image description">
+        <p class="caption my-2">We realize that one pawn is carrying all 60 toxic waste<br/></p>
+        <p>
+           Once the pawn has loaded all the items into its inventory, we can cancel the caravan. This step allows us to add the pawn to a drop pod group. Yet, this action would prompt the pawn to unload all of its items while trying to enter the drop pod. To sidestep this issue, we could temporarily incapacitate the pawn (not downing it) and then have another pawn shove it into the designated drop pod.
+        </p>
+        <p>
+            A viable method to incapacitate the pawn involves utilizing a medical bed and applying anesthesia. First, assign a medical bed to the pawn in question. Following this, schedule an anesthesia procedure for it. This can be accomplished by selecting the pawn and choosing the anesthesia operation from its health tab. After this, right-click on the assigned medical bed and select the "rest until healed" option.
+        </p>
+        <div class="text-center my-4">
+            <img src="../images/overw4.png" class="img-fluid rounded thumb" alt="Image description">
+        </div>
+        <p>
+              After the anesthetization procedure, draft the doctor, pick up the unconscious pawn, select the designated drop pod, and shove the pawn in. We now get an overweight drop pod ready for liftoff.
+        </p>
+        <div class="text-center my-4">
+            <img src="../images/overw6.png" class="img-fluid rounded thumb" alt="Image description">
+            <p class="caption my-3">anesthetized pawn still with all the items</p>
+        </div>
+        <div class="text-center my-4">
+            <img src="../images/overw7.png" class="img-fluid rounded thumb" alt="Image description">
+            <p class="caption my-3">we're now able to place the pawn into a droppod</p>
+        </div>
+
+        <p>
+            <span class="big-letter">S</span>pecial thanks to creator 绅士灰机君, who creates, compiles, and make videos about rimworld cheeses.
+            Link to his channel <a href="https://space.bilibili.com/288177">here</a>
+        </p>
+
+        <p>
+            <span style="font-weight: bold; font-size: 25px;">Reference:</span>
+        </p>yop
+
+        <p>
+        https://www.bilibili.com/video/BV1LD4y137qM/?share_source=copy_web&vd_source=f717728c9199a1ccd9a1d0a6d4da3a36
+        <br/>
+        https://tieba.baidu.com/p/8277382025
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggler = document.querySelector('.navbar-toggler');
+
+            toggler.addEventListener('click', function() {
+              var togglerState = this.getAttribute('data-toggler-state');
+              
+              if (togglerState === 'O') {
+                this.setAttribute('data-toggler-state', 'X');
+              } else {
+                this.setAttribute('data-toggler-state', 'O');
+              }
+            });
+        });
+
+          // Your JSONbin.io API key and bin URL
+          const API_KEY = '$2b$10$8p1STBA8I6MWqQlbPdgmbegqjGY0kuSV3Z4RL.x0LfWcuHvvVxwUW';
+          const BIN_URL = 'https://api.jsonbin.io/v3/b/6462e5a3b89b1e22999e8041';
+
+           // Fetch the current likes count and display it
+          fetch(BIN_URL, {
+            method: 'GET',
+            headers: {
+              'X-Master-Key': API_KEY
+            }
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (isNaN(data.record.likes)) {
+              console.error('Invalid likes count:', data.record.likes);
+            } else {
+              document.getElementById('like-count').textContent = data.record.likes;
+            }
+          })
+          .catch(error => console.error('Error:', error));
+
+          // Function to increment likes
+          function incrementLikes() {
+            // Check if the user has already liked
+            if(localStorage.getItem('hasLiked')) {
+              alert('You have already liked this post.');
+              return;
+            }
+
+            const likeCountElement = document.getElementById('like-count');
+            let likeCount = parseInt(likeCountElement.textContent) + 1;
+
+            // Update the likes count in JSONbin.io
+            fetch(BIN_URL, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Master-Key': API_KEY
+              },
+              body: JSON.stringify({ likes: likeCount })
+            })
+            .then(response => response.json())
+            .then(data => {
+              // Update the displayed likes count
+              likeCountElement.textContent = likeCount;
+              // Set the flag in local storage
+              localStorage.setItem('hasLiked', 'true');
+            })
+            .catch(error => console.error('Error:', error));
+          }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

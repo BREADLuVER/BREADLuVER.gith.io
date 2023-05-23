@@ -109,6 +109,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+
 .view{
   height: 80vh;
 }
@@ -142,12 +143,18 @@
   font-size: 9;
 }
 
+.caption {
+  color : black;
+  text-decoration: none;
+}
+
 .card {
   border-radius: 50px;
   overflow: hidden;
   display: inline-block;
   background: #ddd9d9;
   border: none;
+  width: 128px;
 }
 
 .hero-card {
@@ -175,13 +182,20 @@ body {
       padding : 10px;
 }
 
-.card{
-  width: 40%
-}
 
 .hero-container{
   width: auto;
   text-align: center;
+}
+
+.clickable-container {
+  display: block;
+  text-decoration: none;
+  margin-top: 0px;
+}
+
+.clickable-container:hover {
+  cursor: pointer;
 }
 
 
@@ -289,6 +303,7 @@ body {
     text-align: center;
     margin-top: 0px;
     color : black;
+    text-decoration: none;
   }
 
   .card{

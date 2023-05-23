@@ -32,4 +32,10 @@ $(document).ready(function () {
     setInterval(function () {
         $('#hopping-image').animate({ marginTop: '-=10px' }, 300).animate({ marginTop: '+=10px' }, 300);
     }, 2000);
+
+    $('.clickable-container').hover(function () {
+        $(this).css('transform', 'scale(1.02)');
+    }, function () {
+        $(this).css('transform', 'scale(1)');
+    });
 });

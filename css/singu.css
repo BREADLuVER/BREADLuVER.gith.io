@@ -26,6 +26,11 @@
   padding: 10;
 }
 
+#title {
+  font-size: 2em;
+  color: #333;
+}
+
 .nav-link{
   font-family: logoType;
   color : black;
@@ -150,14 +155,19 @@
 
 
 .hero-img{
-  width: 80%;
+  width: 90%;
 }
 
+.row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
       
 p {
   margin: 0 auto;
   font-family: iran;
-  max-width: 1100px;
+  max-width: 1000px;
   font-size: 18px;
   line-height: 1.5;
   padding-bottom: 20px;
@@ -168,7 +178,7 @@ p {
 }
 
 .thumb {
-    width: 750px;
+    width: 950px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -202,7 +212,7 @@ p {
 
 .caption {
   text-align: center !important;
-  font-size: 14px;
+  font-size: 16px;
   font-style: italic;
   margin-bottom: 20px;
 }
